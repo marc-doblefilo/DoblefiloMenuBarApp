@@ -10,16 +10,37 @@
 		028D7DF028ED73CF004BF3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028D7DEF28ED73CF004BF3F1 /* AppDelegate.swift */; };
 		028D7DF228ED73CF004BF3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028D7DF128ED73CF004BF3F1 /* ViewController.swift */; };
 		028D7DF428ED73D1004BF3F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 028D7DF328ED73D1004BF3F1 /* Assets.xcassets */; };
-		028D7DF728ED73D1004BF3F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 028D7DF528ED73D1004BF3F1 /* Main.storyboard */; };
+		028D7DFF28ED74EE004BF3F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028D7DFE28ED74EE004BF3F1 /* ContentView.swift */; };
+		02980D8728EDB21300CF73A5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02980D8628EDB21300CF73A5 /* main.swift */; };
+		02980D8A28EDBB9100CF73A5 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 02980D8928EDBB9100CF73A5 /* Cartfile */; };
+		02980D9328EDDF7D00CF73A5 /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02980D9228EDDF7D00CF73A5 /* System.swift */; };
+		02980D9528EEB52C00CF73A5 /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02980D9428EEB52C00CF73A5 /* Battery.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		02980D9028EDBCBA00CF73A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		028D7DEC28ED73CF004BF3F1 /* NSDoblefiloMenuBarApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSDoblefiloMenuBarApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		028D7DEF28ED73CF004BF3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		028D7DF128ED73CF004BF3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		028D7DF328ED73D1004BF3F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		028D7DF628ED73D1004BF3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		028D7DF828ED73D1004BF3F1 /* NSDoblefiloMenuBarApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NSDoblefiloMenuBarApp.entitlements; sourceTree = "<group>"; };
+		028D7DFE28ED74EE004BF3F1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		02980D8628EDB21300CF73A5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		02980D8928EDBB9100CF73A5 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		02980D9228EDDF7D00CF73A5 /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		02980D9428EEB52C00CF73A5 /* Battery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +73,25 @@
 		028D7DEE28ED73CF004BF3F1 /* NSDoblefiloMenuBarApp */ = {
 			isa = PBXGroup;
 			children = (
+				02980D9128EDDF6800CF73A5 /* Core */,
 				028D7DEF28ED73CF004BF3F1 /* AppDelegate.swift */,
 				028D7DF128ED73CF004BF3F1 /* ViewController.swift */,
 				028D7DF328ED73D1004BF3F1 /* Assets.xcassets */,
-				028D7DF528ED73D1004BF3F1 /* Main.storyboard */,
 				028D7DF828ED73D1004BF3F1 /* NSDoblefiloMenuBarApp.entitlements */,
+				028D7DFE28ED74EE004BF3F1 /* ContentView.swift */,
+				02980D8628EDB21300CF73A5 /* main.swift */,
+				02980D8928EDBB9100CF73A5 /* Cartfile */,
 			);
 			path = NSDoblefiloMenuBarApp;
+			sourceTree = "<group>";
+		};
+		02980D9128EDDF6800CF73A5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				02980D9228EDDF7D00CF73A5 /* System.swift */,
+				02980D9428EEB52C00CF73A5 /* Battery.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +104,7 @@
 				028D7DE828ED73CF004BF3F1 /* Sources */,
 				028D7DE928ED73CF004BF3F1 /* Frameworks */,
 				028D7DEA28ED73CF004BF3F1 /* Resources */,
+				02980D9028EDBCBA00CF73A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,8 +153,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02980D8A28EDBB9100CF73A5 /* Cartfile in Resources */,
 				028D7DF428ED73D1004BF3F1 /* Assets.xcassets in Resources */,
-				028D7DF728ED73D1004BF3F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,23 +165,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02980D9328EDDF7D00CF73A5 /* System.swift in Sources */,
 				028D7DF228ED73CF004BF3F1 /* ViewController.swift in Sources */,
 				028D7DF028ED73CF004BF3F1 /* AppDelegate.swift in Sources */,
+				02980D9528EEB52C00CF73A5 /* Battery.swift in Sources */,
+				02980D8728EDB21300CF73A5 /* main.swift in Sources */,
+				028D7DFF28ED74EE004BF3F1 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		028D7DF528ED73D1004BF3F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				028D7DF628ED73D1004BF3F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		028D7DF928ED73D1004BF3F1 /* Debug */ = {
@@ -273,8 +300,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,8 +326,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSMainStoryboardFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

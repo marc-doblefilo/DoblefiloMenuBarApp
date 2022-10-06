@@ -1,30 +1,34 @@
-//
-//  AppDelegate.swift
-//  NSDoblefiloMenuBarApp
-//
-//  Created by Marc Rodríguez on 5/10/22.
-//
-
 import Cocoa
+import SwiftUI
+import AppKit
 
-@main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     
-
+    private var statusItem: NSStatusItem!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        NSApp.setActivationPolicy(.prohibited)
+        
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        if let button = statusItem.button {
+            button.title = "Doblefilo"
+            button.image = NSImage(systemSymbolName: "d.circle", accessibilityDescription: "d")
+            button.alternateImage = NSImage(systemSymbolName: "1.circle", accessibilityDescription: "1")
+
+        }
+        
+        let view = NSHostingView(rootView: SwiftUIView())
+        
+        view.frame = NSRect(x: 0, y: 0, width: 170, height: 80)
+        
+        let menuItem = NSMenuItem()
+        menuItem.view = view
+        
+        let menu = NSMenu()
+        menu.addItem(menuItem)
+    
+                
+        
+        statusItem?.menu = menu
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-        return true
-    }
-
-
 }
-

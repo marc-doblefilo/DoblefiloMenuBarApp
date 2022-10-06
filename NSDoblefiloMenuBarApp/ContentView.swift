@@ -57,7 +57,7 @@ struct SwiftUIView: View {
                             )
                         ).rotationEffect(.degrees(-90))
                     Text("CPU").bold()
-                }.frame(width: 50, height: 50)
+                }.frame(width: 50, height: 50).padding(.leading)
                 ZStack {
                     Circle().stroke(
                         Color.gray.opacity(0.5),
@@ -84,11 +84,15 @@ struct SwiftUIView: View {
             //            }
             //        }
             //}
-            Spacer().onAppear {
-                refreshInformation()
-                self.cpuUsageState = cpuInDouble()
-                self.memoryUsageState = memoryInDouble()
+            HStack {
+                Button("Quit") {
+                    exit(0)
+                }
             }
-        }
+        }.onAppear {
+            refreshInformation()
+            self.cpuUsageState = cpuInDouble()
+            self.memoryUsageState = memoryInDouble()
+            }
     }
 }

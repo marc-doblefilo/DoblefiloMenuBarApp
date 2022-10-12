@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-var sys = System()
-var cpuUsage = sys.usageCPU()
+var system = System()
+var cpuUsage = system.usageCPU()
+let internalFinder = InternalFinder()
 
 var memoryUsage = System.memoryUsage()
 
@@ -31,11 +32,12 @@ struct SwiftUIView: View {
     
     @State private var cpuUsageState: Double = 0.0
     @State private var memoryUsageState: Double = 0.0
+    @State private var batteryCapacityState: Double = 0.0
     
     @State private var isKeyboardOff: Bool = false
     
     func refreshInformation() {
-            cpuUsage = sys.usageCPU()
+            cpuUsage = system.usageCPU()
             
             memoryUsage = System.memoryUsage()
     }
@@ -57,7 +59,7 @@ struct SwiftUIView: View {
                             )
                         ).rotationEffect(.degrees(-90))
                     Text("CPU").bold()
-                }.frame(width: 50, height: 50).padding(.leading)
+                }.frame(width: 50, height: 50)
                 ZStack {
                     Circle().stroke(
                         Color.gray.opacity(0.5),
@@ -73,6 +75,20 @@ struct SwiftUIView: View {
                     Text("RAM").bold()
                 }.frame(width: 50, height: 50)
                     .padding(.horizontal, 15)
+                ZStack {
+                    Circle().stroke(
+                        Color.gray.opacity(0.5),
+                        lineWidth: 6
+                    )
+                    Circle().trim(from:0, to:(batteryCapacityState)).stroke(
+                        Color.green,
+                        style: StrokeStyle(
+                            lineWidth: 6,
+                            lineCap: .round
+                        )
+                    ).rotationEffect(.degrees(-90))
+                    Text("BATT").bold()
+                }.frame(width: 50, height: 50)
             }.padding(.bottom, 20).padding(.top, 15)
             //HStack {
             //    Text("Keyboard cleaning").padding(.horizontal, 10)
@@ -93,6 +109,9 @@ struct SwiftUIView: View {
             refreshInformation()
             self.cpuUsageState = cpuInDouble()
             self.memoryUsageState = memoryInDouble()
+            if let internalBattery = internalFinder.getInternalBattery() {
+                batteryCapacityState = (Double(internalBattery.currentCapacity!) / 100)
+            }
             }
     }
 }

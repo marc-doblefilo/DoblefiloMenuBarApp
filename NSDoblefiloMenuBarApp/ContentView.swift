@@ -101,17 +101,19 @@ struct SwiftUIView: View {
             //        }
             //}
             HStack {
-                Button("Quit") {
+                Button(action: {
                     exit(0)
+                }) {
+                    Text("Quit").frame(maxWidth: .infinity)
                 }
-            }
-        }.onAppear {
+            }.padding(.horizontal, 10)
+        }.frame(maxWidth: .infinity).onAppear {
             refreshInformation()
             self.cpuUsageState = cpuInDouble()
             self.memoryUsageState = memoryInDouble()
             if let internalBattery = internalFinder.getInternalBattery() {
                 batteryCapacityState = (Double(internalBattery.currentCapacity!) / 100)
             }
-            }
+        }
     }
 }

@@ -90,16 +90,11 @@ struct SwiftUIView: View {
                     Text("BATT").bold()
                 }.frame(width: 50, height: 50)
             }.padding(.bottom, 20).padding(.top, 15)
-            //HStack {
-            //    Text("Keyboard cleaning").padding(.horizontal, 10)
-            //   Toggle("Keyboard cleaning", isOn: self.$isKeyboardOff)
-            //        .toggleStyle(.switch).labelsHidden().padding(.horizontal, 10)
-            //        .onChange(of: isKeyboardOff) { value in
-            //            if value == true {
-            //                print("IT IS TRUE")
-            //            }
-            //        }
-            //}
+            HStack {
+                Toggle(isOn: $isKeyboardOff) {
+                    Text("Keyboard cleaning").frame(maxWidth: .infinity)
+                }.labelsHidden().toggleStyle(.button)
+            }.padding(.horizontal, 10)
             HStack {
                 Button(action: {
                     exit(0)

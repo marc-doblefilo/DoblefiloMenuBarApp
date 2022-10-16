@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let view = NSHostingView(rootView: SwiftUIView())
         
-        view.frame = NSRect(x: 0, y: 0, width: 230, height: 120)
+        view.frame = NSRect(x: 0, y: 0, width: 230, height: 150)
         
         let menuItem = NSMenuItem()
         menuItem.view = view
